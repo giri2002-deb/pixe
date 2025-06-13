@@ -57,7 +57,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       <div className="text-center z-10">
         {/* Company Logo/Name */}
         <div className="mb-8">
-          <h1 className="text-6xl font-bold text-gradient mb-4 animate-pulse-glow">
+          <h1 className="text-6xl font-bold text-gradient mb-4">
             Splendenslab
           </h1>
           <div className="flex items-center justify-center space-x-2">
