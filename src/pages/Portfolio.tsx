@@ -20,34 +20,34 @@ const portfolioItems = [
     id: 1,
     title: "Hospital Management System (HMS)",
     category: "Web Application",
-    image:"../public/lovable-uploads/c4.jpeg",
+    image:"/lovable-uploads/c4.jpeg",
   },
   
   {
     id: 3,
     title: "Gstore",
     category: "Web Application",
-    image: "../public/lovable-uploads/c5.jpeg ",
+    image: "/lovable-uploads/c5.jpeg ",
   },
   {
     id: 4,
     title: "Fintech",
     category: "Mobile Application",
-    image: " ../public/lovable-uploads/c6.jpeg ",
+    image: " /lovable-uploads/c6.jpeg ",
   },
   {
     id: 5,
     title: "Loan Web App",
     category: "Web Application",
 
-    image: " ../public/lovable-uploads/c2.png ",
+    image: "/lovable-uploads/c2.png ",
   },
   {
     id: 6,
     title: "Parking App",
     category: "Mobile Application",
    
-    image: "../public/lovable-uploads/c.jpg",
+    image: "/lovable-uploads/c.jpg",
   },
 ];
 

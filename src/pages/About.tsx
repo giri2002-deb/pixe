@@ -84,25 +84,36 @@ function About() {
             </div>
             <div className="rounded-3xl overflow-hidden shadow-lg">
               <div className="w-full h-72 bg-gray-400">
-                   <img src="../public/lovable-uploads/a1 (1).avif"></img>
+                   <img src="/lovable-uploads/a1 (1).avif"></img>
               </div>
             </div>
           </div>
 
           {/* WHAT'S OUR SECRET */}
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
-            <div className="rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
-              <div className="w-full h-72 bg-gray-400">
-                <img src="../public/lovable-uploads/a1 (1).svg"></img>
-              </div>
-            </div>
-            <div className="pl-8 order-1 md:order-2">
-              <h2 className="text-3xl font-bold text-black mb-6 tracking-tight">WHAT'S OUR SECRET?</h2>
-              <p className="text-gray-800 text-sm leading-relaxed">
-                Have the peace of mind that you are working with one of the best bespoke web and mobile application Development Company. There are really two things that make "PixeLablab" special, the Process and Our Team.
-              </p>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+  {/* Image Section */}
+  <div className="rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
+    <div className="w-full h-72">
+      <img
+        src="/lovable-uploads/a1 (1).svg"
+        alt="Our Secret"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  {/* Text Section */}
+  <div className="pl-8 order-1 md:order-2">
+    <h2 className="text-3xl font-bold text-black mb-6 tracking-tight">
+      WHAT'S OUR SECRET?
+    </h2>
+    <p className="text-gray-800 text-sm leading-relaxed">
+      Have the peace of mind that you are working with one of the best bespoke web and mobile application
+      development company. There are really two things that make "PixeLablab" special — the Process and Our Team.
+    </p>
+  </div>
+</div>
+
 
           {/* OUR PROCESS */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
@@ -114,7 +125,7 @@ function About() {
             </div>
             <div className="rounded-3xl overflow-hidden shadow-lg">
               <div className="w-full h-72 bg-gray-400">
-                <img src="../public/lovable-uploads/a1 (1).webp"></img>
+                <img src="/lovable-uploads/a1 (1).webp"></img>
               </div>
             </div>
           </div>
@@ -123,7 +134,7 @@ function About() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="rounded-3xl overflow-hidden shadow-lg order-2 md:order-1">
               <div className="w-full h-72 bg-gray-400">
-                <img src="../public/lovable-uploads/a1 (2).avif"></img>
+                <img src="/lovable-uploads/a1 (2).avif"></img>
               </div>
             </div>
             <div className="pl-8 order-1 md:order-2">

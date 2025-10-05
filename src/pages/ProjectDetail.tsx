@@ -11,7 +11,7 @@ const portfolioData = {
     id: 1,
     title: "Hospital Management System (HMS)",
     category: "Web Application",
-    image: "../public/lovable-uploads/d.jpeg ",
+    image: " /lovable-uploads/d.jpeg ",
     description: "An end-to-end software solution designed to streamline hospital operations. The system manages patient records, appointments, billing, and staff schedules, ensuring efficient workflow and improved patient care.",
     features: [
        "Patient registration and record management",
@@ -27,7 +27,7 @@ const portfolioData = {
     id: 3,
     title: "Gstore",
     category: "Web Application",
-    image: "../public/lovable-uploads/d1s.jpeg ",
+    image: " /lovable-uploads/d1s.jpeg ",
     description: "An electronics-focused online store offering a wide range of gadgets and devices. The platform features user-friendly browsing, secure payment integration, order management, and responsive design for a seamless shopping experience.",
     features: [
        "Electronics product catalog with categories and search",
@@ -42,7 +42,7 @@ const portfolioData = {
     id: 4,
     title: "Fintech",
     category: "Mobile Application",
-    image: "../public/lovable-uploads/d2.jpeg ",
+    image: " /lovable-uploads/d2.jpeg ",
     description: "A mobile/web app designed to manage and track chit collections from borrowers efficiently. It simplifies payment recording, reminders, and reporting for smooth financial operations.",
     features: [
      "Borrower management and payment tracking",
@@ -56,7 +56,7 @@ const portfolioData = {
     id: 5,
     title: "Loan Web App",
     category: "Web Application",
-    image: "../public/lovable-uploads/c2.png  ",
+    image: " /lovable-uploads/c2.png  ",
     description: "A front-end web application developed as per client requirements to manage agriculture and animal husbandry loan processes. The app is built using JSON files for data storage, without a database, providing a lightweight and functional interface.",
     features: [
     "Loan application forms and tracking",
@@ -70,7 +70,7 @@ const portfolioData = {
     id: 6,
     title: "Parking App",
     category: "Mobile Application",
-    image: "../public/lovable-uploads/c.jpg",
+    image: " /lovable-uploads/c.jpg",
     description: "A mobile/web app designed to simplify parking management for users and administrators. The app helps find, book, and manage parking spaces efficiently.",
     features: [
        "Search and reserve parking spots",
