@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import LoadingScreen from '../components/LoadingScreen';
+
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ExpertiseSection from '../components/ExpertiseSection';
@@ -17,9 +17,7 @@ const Index = () => {
     setIsLoading(false);
   };
 
-  if (isLoading) {
-    return <LoadingScreen onComplete={handleLoadingComplete} />;
-  }
+
 
   return (
     <div className="min-h-screen relative">
