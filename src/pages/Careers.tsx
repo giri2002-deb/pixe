@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+
 import AnimatedSection from '../components/AnimatedSection';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -86,7 +86,7 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen relative">
-      <ParticleBackground />
+      
       <Navbar />
       
       <main className="relative z-10 pt-20">
@@ -112,8 +112,13 @@ const Careers = () => {
                 </Button>
               </div>
             </AnimatedSection>
+            
+
+
           </div>
         </section>
+ 
+
 
         {/* Call to Action */}
         <section className="py-16">

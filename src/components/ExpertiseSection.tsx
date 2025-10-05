@@ -1,130 +1,207 @@
+import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Smartphone, Globe, Layers, TrendingUp, TestTube } from "lucide-react";
 
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import AnimatedSection from './AnimatedSection';
+const SpecializationSection = () => {
+  const [activeTab, setActiveTab] = useState("mobile");
 
-const ExpertiseSection = () => {
   const expertiseData = [
     {
       title: "Web Applications",
-      description: "Evolving business challenges require technology solutions that are adaptive and scalable as your business grows. At Splendenslab, we specialize in delivering custom web application development solutions that can automate your business processes and provide a superior ROI to your technology investments.",
-      image: "/lovable-uploads/9dbe8596-62d7-470a-b5d8-37ba2213975c.png",
-      link: "Our web app expertise"
+      description:
+        "Evolving business challenges require technology solutions that are adaptive and scalable as your business grows. At Splendenslab, we specialize in delivering custom web application development solutions that can automate your business processes and provide a superior ROI to your technology investments.",
+      image: "./lovable-uploads/web1.png",
+      link: "/portfolio/mobile-applications",
     },
     {
-      title: "Mobile Applications", 
-      description: "With capabilities across all device platforms our mobile app development services can profit to build both customer and enterprise apps. We know how people are interacting with mobile apps and we design and develop in top notch based on the business need seamlessly.",
-      image: "/lovable-uploads/be9cfe76-6d02-46f9-b551-53f2524ab6ad.png",
-      link: "Our mobile app expertise"
+      title: "Mobile Applications",
+      description:
+        "With capabilities across all device platforms, our mobile app development services can profit to build both customer and enterprise apps. We know how people are interacting with mobile apps and we design and develop top-notch products based on business needs seamlessly.",
+      image: "./lovable-uploads/mobile1.png",
+      link: "Our mobile app expertise",
     },
     {
       title: "Micro services",
-      description: "We are helping enterprises with microservices development to modernize their enterprise IT Systems. We build and manage microservices effectively by integrating APIs to make application databases and legacy apps more flexible and agile.",
-      image: "/lovable-uploads/1871d851-bfa7-4541-86df-920faf113ca1.png", 
-      link: "Our business integrations"
-    }
+      description:
+        "We are helping enterprises with microservices development to modernize their enterprise IT Systems. We build and manage microservices effectively by integrating APIs to make application databases and legacy apps more flexible and agile.",
+      image: "./lovable-uploads/micro1.png",
+      link: "Our business integrations",
+    },
   ];
 
   const servicesData = [
     {
       title: "UI/UX Design and Development",
-      description: "We aspire to create simple, user-friendly by conducting comprehensive research on end-user behaviour, their needs before start designing the apps. Our best-in-class result-driven strategies works on a wide range of platforms. We deliver designs with better functionality and user experience.",
-      image: "/lovable-uploads/ee28cd27-b67a-4f16-b993-24ca504f6f33.png",
-      link: "Our UI/UX expertise"
+      description:
+        "We aspire to create simple, user-friendly experiences by conducting comprehensive research on end-user behaviour before designing. Our best-in-class, result-driven strategies work on a wide range of platforms, delivering better functionality and user experience.",
+      image: "./lovable-uploads/uiux2.png",
+      link: "Our UI/UX expertise",
     },
     {
       title: "Digital Marketing",
-      description: "We offer a suite of services promoting your business online to target, strategize, execute, measure, and optimize across various digital channels. Our focus is on delivering exceptional digital experience to your audience thereby offering maximum Return on Investment for your marketing budget.",
-      image: "/lovable-uploads/bb4e2d5f-9fa2-4c16-834e-8d260354a382.png",
-      link: "Our Digital Marketing expertise"
+      description:
+        "We offer a suite of services promoting your business online across various digital channels. Our focus is on delivering exceptional digital experiences to your audience, ensuring maximum ROI for your marketing budget.",
+      image: "./lovable-uploads/digital1.png",
+      link: "Our Digital Marketing expertise",
     },
     {
       title: "Testing Services",
-      description: "A small glitch in performance can spell doomsday for the entire development process. Our holistic approach in software testing by implementing the best possible testing methodologies & applications ensures to deliver quality and decreased cost.",
-      image: "/lovable-uploads/4f0f4a40-5f63-4cc0-a029-faebba5e345a.png",
-      link: "Our Testing Services"
-    }
+      description:
+        "A small glitch in performance can spell doomsday for the entire development process. Our holistic testing approach ensures quality through proven methodologies and reduced cost.",
+      image: "./lovable-uploads/testing2.png",
+      link: "Our Testing Services",
+    },
   ];
 
   return (
-    <section className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <AnimatedSection animation="fade-up">
-          <h2 className="text-5xl font-bold text-center mb-20 text-gradient">
-            OUR EXPERTISE
-          </h2>
-        </AnimatedSection>
+    <section className="py-16 px-6 bg-white">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+          Our Specialization
+        </h2>
 
-        {/* First Row - Expertise */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {expertiseData.map((item, index) => (
-            <AnimatedSection 
-              key={index} 
-              animation={index === 0 ? "fade-left" : index === 2 ? "fade-right" : "fade-up"}
-              delay={index * 200}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="flex flex-wrap justify-center gap-2 mb-12 bg-transparent h-auto">
+            <TabsTrigger
+              value="mobile"
+              className="rounded-full px-6 border border-sky-400 text-gray-700 hover:bg-sky-100 data-[state=active]:bg-sky-500 data-[state=active]:text-white transition"
             >
-              <Card className="glass-effect border-slate-700 hover:border-purple-500 transition-all duration-300 group overflow-hidden h-full">
-                <div className="relative h-64 mb-6 overflow-hidden rounded-t-lg">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 z-10"></div>
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-300 mb-6 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <button className="text-purple-400 hover:text-purple-300 font-semibold transition-colors group">
-                    {item.link}
-                    <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                  </button>
-                </div>
-              </Card>
-            </AnimatedSection>
-          ))}
-        </div>
+              <Smartphone className="w-4 h-4 mr-2" />
+              Mobile Application
+            </TabsTrigger>
 
-        {/* Second Row - Services */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {servicesData.map((item, index) => (
-            <AnimatedSection 
-              key={index} 
-              animation={index === 0 ? "fade-left" : index === 2 ? "fade-right" : "fade-up"}
-              delay={index * 200}
+            <TabsTrigger
+              value="web"
+              className="rounded-full px-6 border border-sky-400 text-gray-700 hover:bg-sky-100 data-[state=active]:bg-sky-500 data-[state=active]:text-white transition"
             >
-              <Card className="glass-effect border-slate-700 hover:border-purple-500 transition-all duration-300 group overflow-hidden h-full">
-                <div className="relative h-64 mb-6 overflow-hidden rounded-t-lg">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 z-10"></div>
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-300 mb-6 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <button className="text-purple-400 hover:text-purple-300 font-semibold transition-colors group">
-                    {item.link}
-                    <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                  </button>
-                </div>
-              </Card>
-            </AnimatedSection>
-          ))}
-        </div>
+              <Globe className="w-4 h-4 mr-2" />
+              Web Application
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="uiux"
+              className="rounded-full px-6 border border-sky-400 text-gray-700 hover:bg-sky-100 data-[state=active]:bg-sky-500 data-[state=active]:text-white transition"
+            >
+              <Layers className="w-4 h-4 mr-2" />
+              UI/UX Design & Development
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="marketing"
+              className="rounded-full px-6 border border-sky-400 text-gray-700 hover:bg-sky-100 data-[state=active]:bg-sky-500 data-[state=active]:text-white transition"
+            >
+              <TrendingUp className="w-4 h-4 mr-2" />
+              Digital Marketing
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="testing"
+              className="rounded-full px-6 border border-sky-400 text-gray-700 hover:bg-sky-100 data-[state=active]:bg-sky-500 data-[state=active]:text-white transition"
+            >
+              <TestTube className="w-4 h-4 mr-2" />
+              Testing Services
+            </TabsTrigger>
+          </TabsList>
+
+          {/* === MOBILE APP TAB === */}
+          <TabsContent value="mobile">
+            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Smartphone className="w-6 h-6 text-sky-500" />
+                {expertiseData[1].title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                {expertiseData[1].description}
+              </p>
+              <div className="flex justify-center items-center gap-4 flex-wrap">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="bg-white rounded-3xl p-4 shadow-md w-48">
+                    <img
+                      src={expertiseData[1].image}
+                      alt={expertiseData[1].title}
+                      className="w-full h-80 object-cover rounded-2xl"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* === WEB APP TAB === */}
+          <TabsContent value="web">
+            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Globe className="w-6 h-6 text-sky-500" />
+                {expertiseData[0].title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                {expertiseData[0].description}
+              </p>
+              <img
+                src={expertiseData[0].image}
+                alt={expertiseData[0].title}
+                className="rounded-2xl shadow-md mx-auto w-3/4"
+              />
+            </div>
+          </TabsContent>
+
+          {/* === UI/UX TAB === */}
+          <TabsContent value="uiux">
+            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Layers className="w-6 h-6 text-sky-500" />
+                {servicesData[0].title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                {servicesData[0].description}
+              </p>
+              <img
+                src={servicesData[0].image}
+                alt={servicesData[0].title}
+                className="rounded-2xl shadow-md mx-auto w-3/4"
+              />
+            </div>
+          </TabsContent>
+
+          {/* === DIGITAL MARKETING TAB === */}
+          <TabsContent value="marketing">
+            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-sky-500" />
+                {servicesData[1].title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                {servicesData[1].description}
+              </p>
+              <img
+                src={servicesData[1].image}
+                alt={servicesData[1].title}
+                className="rounded-2xl shadow-md mx-auto w-3/4"
+              />
+            </div>
+          </TabsContent>
+
+          {/* === TESTING TAB === */}
+          <TabsContent value="testing">
+            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <TestTube className="w-6 h-6 text-sky-500" />
+                {servicesData[2].title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                {servicesData[2].description}
+              </p>
+              <img
+                src={servicesData[2].image}
+                alt={servicesData[2].title}
+                className="rounded-2xl shadow-md mx-auto w-3/4"
+              />
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
 };
 
-export default ExpertiseSection;
+export default SpecializationSection;

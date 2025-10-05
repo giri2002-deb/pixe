@@ -1,64 +1,83 @@
-
-import React from 'react';
-import AnimatedSection from './AnimatedSection';
+import React, { useRef, useEffect, useState } from "react";
 
 const TechnologySection = () => {
   const technologies = [
-    { name: 'Flutter', icon: '🚀', color: 'from-blue-400 to-blue-600' },
-    { name: 'React', icon: '⚛️', color: 'from-cyan-400 to-cyan-600' },
-    { name: 'Angular', icon: '🅰️', color: 'from-red-400 to-red-600' },
-    { name: 'JavaScript', icon: '📜', color: 'from-yellow-400 to-yellow-600' },
-    { name: 'Bootstrap', icon: '🅱️', color: 'from-purple-400 to-purple-600' },
-    { name: 'Material UI', icon: '🎨', color: 'from-blue-400 to-indigo-600' },
-    { name: 'Java', icon: '☕', color: 'from-orange-400 to-red-600' },
-    { name: 'Spring', icon: '🌱', color: 'from-green-400 to-green-600' }
+    { name: "Flutter", icon: "🚀", color: "from-blue-400 to-blue-600" },
+    { name: "React", icon: "⚛️", color: "from-cyan-400 to-cyan-600" },
+    { name: "Angular", icon: "🅰️", color: "from-red-400 to-red-600" },
+    { name: "JavaScript", icon: "📜", color: "from-yellow-400 to-yellow-600" },
+    { name: "Bootstrap", icon: "🅱️", color: "from-purple-400 to-purple-600" },
+    { name: "Material UI", icon: "🎨", color: "from-blue-400 to-indigo-600" },
+    { name: "Java", icon: "☕", color: "from-orange-400 to-red-600" },
+    { name: "Spring", icon: "🌱", color: "from-green-400 to-green-600" },
   ];
+  const marqueeRef = useRef(null);
+  const [marqueeWidth, setMarqueeWidth] = useState(0);
+
+  useEffect(() => {
+    if (marqueeRef.current) {
+      setMarqueeWidth(marqueeRef.current.scrollWidth);
+    }
+  }, []);
 
   return (
-    <section className="py-20 relative">
-      <div className="container mx-auto px-6 text-center">
-        <AnimatedSection animation="fade-up">
-          <h2 className="text-5xl font-bold mb-8 text-gradient">
-            TECHNOLOGY
-          </h2>
-        </AnimatedSection>
+    <section className="py-16 px-6 bg-white">
+      <div className="container mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-4 text-gray-800">Technology</h2>
+        <p className="text-gray-500 mb-12 max-w-2xl mx-auto">
+          We create and deliver custom solutions of high technical and engineering
+          quality using the following technologies and frameworks.
+        </p>
 
-        <AnimatedSection animation="fade-up" delay={200}>
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto mb-16">
-            We create and deliver custom solutions of high aesthetical and engineering quality using the 
-            following technologies and frameworks.
-          </p>
-        </AnimatedSection>
-
-        <AnimatedSection animation="fade-up" delay={400}>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 mb-16">
-            {technologies.map((tech, index) => (
+        {/* Infinite Marquee - left to right and icon rotate */}
+        <div className="relative overflow-hidden">
+          <div
+            ref={marqueeRef}
+            className="flex whitespace-nowrap"
+            style={{
+              animation: `marqueeLTR ${marqueeWidth / 50}s linear infinite`,
+            }}
+          >
+            {[...technologies, ...technologies].map((tech, index) => (
               <div
                 key={index}
-                className="group relative p-6 glass-effect rounded-xl hover:scale-110 transition-all duration-300 cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`w-28 h-28 border-2 border-sky-400 rounded-xl flex flex-col items-center justify-center text-3xl bg-white shadow-md hover:shadow-lg transition flex-shrink-0 mx-2`}
               >
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r ${tech.color} flex items-center justify-center text-2xl shadow-lg group-hover:shadow-xl transition-shadow`}>
+                <span
+                  className="inline-block"
+                  style={{
+                    animation: "rotateIcon 2s linear infinite",
+                  }}
+                >
                   {tech.icon}
-                </div>
-                <p className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors">
+                </span>
+                <span className="text-sm font-semibold text-gray-700 mt-1">
                   {tech.name}
-                </p>
-                
-                {/* Hover effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </span>
               </div>
             ))}
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-up" delay={600}>
-          <button className="text-purple-400 hover:text-purple-300 font-semibold text-lg transition-colors group">
-            View more about our technical expertise
-            <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-          </button>
-        </AnimatedSection>
+        <a
+          href="#"
+          className="text-sky-500 hover:underline inline-flex items-center gap-2 mt-8"
+        >
+          Know more about our technical expertise →
+        </a>
       </div>
+
+      {/* Custom CSS for marquee and rotate */}
+      <style>{`
+        @keyframes marqueeLTR {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(0); }
+        }
+        @keyframes rotateIcon {
+          0% { transform: rotate(0deg);}
+          100% { transform: rotate(360deg);}
+        }
+      `}</style>
     </section>
   );
 };

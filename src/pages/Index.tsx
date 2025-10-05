@@ -8,7 +8,7 @@ import TechnologySection from '../components/TechnologySection';
 import TestimonialSection from '../components/TestimonialSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,13 +23,29 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      <ParticleBackground />
+      
       <Navbar />
       <main className="relative z-10">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <HeroSection />
+         <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <ExpertiseSection />
+         <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <TechnologySection />
-        <TestimonialSection />
+         <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
         <ContactSection />
       </main>
       <Footer />

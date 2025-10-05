@@ -1,75 +1,54 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 py-12 border-t border-slate-800">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Company Info */}
+    <footer className="bg-background border-t border-border py-12 px-6">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-purple-400 mb-4">Splendenslab IT Ventures Pvt Ltd</h3>
-            <div className="text-slate-300 space-y-1">
-              <p>4/197-2, R.V.C Complex</p>
-              <p>Dasanaikanpatti</p>
-              <p>Salem, Tamil Nadu, India</p>
+            <h3 className="font-semibold mb-4">PixeLab</h3>
+            <p className="text-sm text-muted-foreground">
+              Sumangali Nagar,  <br />
+              Elampillai,<br />
+              Salem-637502.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Connect with Us</h3>
+            <div className="flex gap-3">
+              <a href="#" className="w-8 h-8 border border-border rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-8 h-8 border border-border rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-8 h-8 border border-border rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-8 h-8 border border-border rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Youtube className="w-4 h-4" />
+              </a>
             </div>
           </div>
-
-          {/* Social Links */}
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-purple-400 mb-4">
-              Let's get social. Follow and join our communities around the web!
-            </h3>
-            <div className="flex justify-center items-center space-x-6 mb-6">
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
-                <Twitter size={24} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
-                <Linkedin size={24} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
-                <Instagram size={24} />
-              </a>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link to="/services" className="text-slate-400 hover:text-purple-400 transition-colors">
-                MOBILE APPLICATIONS
-              </Link>
-              <Link to="/services" className="text-slate-400 hover:text-purple-400 transition-colors">
-                WEB APPLICATIONS
-              </Link>
-              <Link to="/services" className="text-slate-400 hover:text-purple-400 transition-colors">
-                SERVICES
-              </Link>
-              <Link to="/about" className="text-slate-400 hover:text-purple-400 transition-colors">
-                ABOUT
-              </Link>
-              <Link to="/contact" className="text-slate-400 hover:text-purple-400 transition-colors">
-                CONTACT
-              </Link>
-            </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="text-muted-foreground hover:text-primary">About</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary">Careers</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary">Services</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary">Web Application</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary">Mobile Application</a></li>
+            </ul>
           </div>
-
-          {/* Contact */}
-          <div className="text-right">
-            <h3 className="text-xl font-bold text-purple-400 mb-4">Contact us thru</h3>
-            <div className="text-slate-300">
-              <p>contact@splendenslab.com</p>
-              <br />
-              <p className="font-semibold">Splendenslab</p>
-            </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Contact Us</h3>
+            <p className="text-sm text-muted-foreground">
+              pixelabsolution@gmail.com
+            </p>
           </div>
-        </div>
-
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
-          <p>&copy; 2024 Splendenslab IT Ventures Pvt Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>
