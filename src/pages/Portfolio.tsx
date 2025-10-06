@@ -24,7 +24,7 @@ const portfolioItems = [
   },
   {
     id: 2,
-    title: "KVP Tex – Digital Marketing ",
+    title: " Digital Marketing ",
     category: "Digital Marketing",
     image:"/lovable-uploads/digitsl.jpeg",
   },

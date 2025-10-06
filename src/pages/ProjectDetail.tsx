@@ -25,7 +25,7 @@ const portfolioData = {
   // ✅ NEW second portfolio item with autoplay video
   2: {
     id: 2,
-    title: "KVP Digital Marketing Project",
+    title: " Digital Marketing Project",
     category: "Video Presentation",
     video: "/lovable-uploads/kvp rework.mp4", // ← your video file path
     description:
@@ -36,7 +36,7 @@ const portfolioData = {
       "Cross-platform marketing highlights",
       "Optimized for social and web viewing",
     ],
-    technologies: ["Adobe Premiere Pro", "After Effects", "Figma"],
+    technologies: ["Adobe Premiere Pro", "After Effects", "Figma","meta business suit"],
   },
 
   3: {

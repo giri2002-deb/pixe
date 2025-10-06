@@ -41,14 +41,14 @@ const SpecializationSection = () => {
       title: "Digital Marketing",
       description:
         "We offer a suite of services promoting your business online across various digital channels. Our focus is on delivering exceptional digital experiences to your audience, ensuring maximum ROI for your marketing budget.",
-      image: "./lovable-uploads/digital1.png",
+      image: "./lovable-uploads/Group.png",
       link: "Our Digital Marketing expertise",
     },
     {
       title: "Testing Services",
       description:
         "A small glitch in performance can spell doomsday for the entire development process. Our holistic testing approach ensures quality through proven methodologies and reduced cost.",
-      image: "./lovable-uploads/Group.png",
+      image: "./lovable-uploads/digital1.png",
       link: "Our Testing Services",
     },
   ];
