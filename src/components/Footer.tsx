@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">PixeLab</h3>
             <p className="text-sm text-muted-foreground">
-              Sumangali Nagar,  <br />
+              35,Sumangali Nagar,  <br />
               Elampillai,<br />
               Salem-637502.
             </p>

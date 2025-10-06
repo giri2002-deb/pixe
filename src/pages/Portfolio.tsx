@@ -9,10 +9,10 @@ import { Card } from "@/components/ui/card";
 const categories = [
   "Mobile Application",
   "Web Application",
-  "Micro Application",
+  
   "UI/UX Design & Development",
   "Digital Marketing",
-  "Testing Services",
+ 
 ];
 
 const portfolioItems = [
@@ -21,6 +21,12 @@ const portfolioItems = [
     title: "Hospital Management System (HMS)",
     category: "Web Application",
     image:"/lovable-uploads/c4.jpeg",
+  },
+  {
+    id: 2,
+    title: "KVP Tex – Digital Marketing ",
+    category: "Digital Marketing",
+    image:"/lovable-uploads/digitsl.jpeg",
   },
   
   {

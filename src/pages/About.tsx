@@ -109,7 +109,7 @@ function About() {
     </h2>
     <p className="text-gray-800 text-sm leading-relaxed">
       Have the peace of mind that you are working with one of the best bespoke web and mobile application
-      development company. There are really two things that make "PixeLablab" special — the Process and Our Team.
+      development company. There are really two things that make "PixeLab" special — the Process and Our Team.
     </p>
   </div>
 </div>

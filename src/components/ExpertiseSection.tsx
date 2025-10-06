@@ -9,15 +9,15 @@ const SpecializationSection = () => {
     {
       title: "Web Applications",
       description:
-        "Evolving business challenges require technology solutions that are adaptive and scalable as your business grows. At Splendenslab, we specialize in delivering custom web application development solutions that can automate your business processes and provide a superior ROI to your technology investments.",
-      image: "./lovable-uploads/web1.png",
+        "Evolving business challenges require technology solutions that are adaptive and scalable as your business grows. At Pixelab, we specialize in delivering custom web application development solutions that can automate your business processes and provide a superior ROI to your technology investments.",
+      image: "./lovable-uploads/Frame3.png",
       link: "/portfolio/mobile-applications",
     },
     {
       title: "Mobile Applications",
       description:
         "With capabilities across all device platforms, our mobile app development services can profit to build both customer and enterprise apps. We know how people are interacting with mobile apps and we design and develop top-notch products based on business needs seamlessly.",
-      image: "./lovable-uploads/mobile1.png",
+      image: "./lovable-uploads/Frame1.png",
       link: "Our mobile app expertise",
     },
     {
@@ -34,7 +34,7 @@ const SpecializationSection = () => {
       title: "UI/UX Design and Development",
       description:
         "We aspire to create simple, user-friendly experiences by conducting comprehensive research on end-user behaviour before designing. Our best-in-class, result-driven strategies work on a wide range of platforms, delivering better functionality and user experience.",
-      image: "./lovable-uploads/uiux2.png",
+      image: "./lovable-uploads/ui ux.png",
       link: "Our UI/UX expertise",
     },
     {
@@ -48,7 +48,7 @@ const SpecializationSection = () => {
       title: "Testing Services",
       description:
         "A small glitch in performance can spell doomsday for the entire development process. Our holistic testing approach ensures quality through proven methodologies and reduced cost.",
-      image: "./lovable-uploads/testing2.png",
+      image: "./lovable-uploads/Group.png",
       link: "Our Testing Services",
     },
   ];
@@ -104,28 +104,27 @@ const SpecializationSection = () => {
           </TabsList>
 
           {/* === MOBILE APP TAB === */}
-          <TabsContent value="mobile">
-            <div className="bg-gray-50 rounded-3xl p-12 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <Smartphone className="w-6 h-6 text-sky-500" />
-                {expertiseData[1].title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                {expertiseData[1].description}
-              </p>
-              <div className="flex justify-center items-center gap-4 flex-wrap">
-                {[...Array(3)].map((_, i) => (
-                  <div key={i} className="bg-white rounded-3xl p-4 shadow-md w-48">
-                    <img
-                      src={expertiseData[1].image}
-                      alt={expertiseData[1].title}
-                      className="w-full h-80 object-cover rounded-2xl"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </TabsContent>
+        <TabsContent value="mobile">
+  <div className="bg-gray-50 rounded-3xl p-12 shadow-sm text-center">
+    <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-2">
+      <Smartphone className="w-6 h-6 text-sky-500" />
+      {expertiseData[1].title}
+    </h3>
+
+    <p className="text-gray-600 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
+      {expertiseData[1].description}
+    </p>
+
+    <div className="w-full rounded-3xl overflow-hidden shadow-md">
+      <img
+        src={expertiseData[1].image}
+        alt={expertiseData[1].title}
+        className="w-full h-auto object-cover rounded-3xl"
+      />
+    </div>
+  </div>
+</TabsContent>
+
 
           {/* === WEB APP TAB === */}
           <TabsContent value="web">
