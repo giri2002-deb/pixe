@@ -28,6 +28,7 @@ const portfolioData = {
     title: " Digital Marketing Project",
     category: "Video Presentation",
     video: "/lovable-uploads/kvp rework.mp4", // ← your video file path
+    image: "/lovable-uploads/z.jpeg",
     description:
       "A digital marketing project showcasing KVP’s services, campaigns, and brand outreach in a dynamic video format. The presentation highlights creative strategies and engagement metrics.",
     features: [
@@ -55,6 +56,71 @@ const portfolioData = {
     ],
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
   },
+    4: {
+    id: 4,
+    title: "Fintech",
+    category: "Mobile Application",
+    image: "/lovable-uploads/c6.jpeg ",
+    description:
+      "A mobile/web app designed to manage and track chit collections from borrowers efficiently. It simplifies payment recording, reminders, and reporting for smooth financial operations.",
+    features: [
+      "Borrower management and payment tracking",
+  "Automated reminders for due amounts",
+  "Collection reports and analytics",
+  "User-friendly interface for easy operation"
+    ],
+    technologies: ["Flutter", "Node.js", "Express.js", "MongoDB"],
+  },
+    5: {
+    id: 5,
+    title: "Loan Web App",
+    category: "Web Application",
+    image: "/lovable-uploads/c2.png",
+    description:
+      "A front-end web application developed as per client requirements to manage agriculture and animal husbandry loan processes. The app is built using JSON files for data storage, without a database, providing a lightweight and functional interface.",
+    features: [
+      "Loan application forms and tracking",
+  "Display of loan schemes and details",
+  "Lightweight front-end with JSON-based data handling",
+  "Responsive design for desktop and mobile"
+    ],
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
+  },
+    6: {
+    id: 6,
+    title: "Parking App",
+    category: "Mobile Application",
+    image: "/lovable-uploads/c.jpg",
+    description:
+      "A mobile/web app designed to simplify parking management for users and administrators. The app helps find, book, and manage parking spaces efficiently.",
+    features: [
+      "Search and reserve parking spots",
+  "Real-time availability updates",
+  "Booking history and payment tracking",
+  "User-friendly interface with responsive design"
+    ],
+    technologies: ["Flutter", "Node.js", "Express.js", "MongoDB"],
+  },
+    7: {
+    id: 7,
+    title: "UI/UX Design",
+    category: "UI/UX Design & Development",
+    image: "/lovable-uploads/ui ux.png",
+    description:
+      "In today’s fast-evolving digital world, UI/UX design plays a key role in crafting seamless user experiences. In India’s growing tech scene, Concept Infoway stands out for its creative approach, design expertise, and deep user insight, delivering intuitive and engaging digital experiences.",
+    features: [
+        "Crafting seamless user experiences through innovative UI/UX design",
+  "Creative approach and design expertise tailored for users",
+  "Deep user insight to deliver intuitive digital experiences",
+  "Engaging and interactive interfaces for better user engagement"
+    ],
+    technologies: ["Figma",
+"Adobe Photoshop",
+"Adobe XD",
+"Adobe Illustrator",
+"Adobe InDesign",
+"Sketch"],
+  }
 
   // ... other entries ...
 };
@@ -86,25 +152,33 @@ const PortfolioDetail = () => {
         </Link>
 
         {/* ✅ Hero Section — show video if exists, otherwise image */}
-      <div className="mb-12 w-full h-[400px] md:h-[450px] rounded-lg shadow-lg overflow-hidden">
-  {item.video ? (
-    <video
-  src={item.video}
-  className="w-full h-full object-contain min-w-[300px] min-h-[300px] "
-  autoPlay
-  muted
-  loop
-  playsInline
-/>
+<div className="mb-12 w-full rounded-lg shadow-lg overflow-hidden">
+  {/* Video */}
+  {item.video && (
+    <div className="w-full h-[400px] md:h-[450px] mb-6">
+      <video
+        src={item.video}
+        className="w-full h-full object-contain min-w-[300px] min-h-[300px] rounded-lg"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+    </div>
+  )}
 
-  ) : (
-    <img
-      src={item.image}
-      alt={item.title}
-      className="w-full h-full object-cover"
-    />
+  {/* Image */}
+  {item.image && (
+    <div className="w-full h-[400px] md:h-[450px]">
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    </div>
   )}
 </div>
+
 
 
         {/* Content */}

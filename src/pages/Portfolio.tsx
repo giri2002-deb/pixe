@@ -55,6 +55,13 @@ const portfolioItems = [
    
     image: "/lovable-uploads/c.jpg",
   },
+  {
+    id: 7,
+    title: "UI/UX Design",
+    category: "UI/UX Design & Development",
+   
+    image: "/lovable-uploads/Fashion.png",
+  },
 ];
 
 const Portfolio = () => {

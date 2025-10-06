@@ -48,6 +48,9 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               pixelabsolution@gmail.com
             </p>
+            <p className="text-sm text-muted-foreground">
+              +91 77081 01977
+            </p>
           </div>
         </div>
       </div>
