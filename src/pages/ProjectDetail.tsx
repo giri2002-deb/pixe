@@ -11,118 +11,52 @@ const portfolioData = {
     category: "Web Application",
     image: "/lovable-uploads/d.jpeg",
     description:
-      "An end-to-end software solution designed to streamline hospital operations. The system manages patient records, appointments, billing, and staff schedules, ensuring efficient workflow and improved patient care.",
+      "An end-to-end hospital management platform that handles patient records, appointments, billing, and staff workflows, improving efficiency and patient experience.",
     features: [
       "Patient registration and record management",
       "Appointment scheduling and reminders",
       "Billing and invoice generation",
       "Staff and resource management",
-      "Dashboard with analytics for hospital administration",
+      "Dashboard with hospital analytics",
     ],
     technologies: ["React.js", "Node.js", "Express.js", "Firebase"],
   },
-
-  // ✅ NEW second portfolio item with autoplay video
   2: {
     id: 2,
-    title: " Digital Marketing Project",
+    title: "Digital Marketing Project",
     category: "Video Presentation",
-    video: "/lovable-uploads/kvp rework.mp4", // ← your video file path
     image: "/lovable-uploads/z.jpeg",
+    video: "/lovable-uploads/kvp rework.mp4",
     description:
-      "A digital marketing project showcasing KVP’s services, campaigns, and brand outreach in a dynamic video format. The presentation highlights creative strategies and engagement metrics.",
+      "A creative digital marketing presentation for KVP showcasing brand awareness, ad campaigns, and engagement analytics using motion design and storytelling.",
     features: [
-      "Brand showcase with motion graphics",
-      "Ad campaign analytics overview",
-      "Cross-platform marketing highlights",
-      "Optimized for social and web viewing",
+      "Brand showcase with dynamic visuals",
+      "Campaign analytics and metrics",
+      "Cross-platform marketing overview",
+      "Optimized for web and social viewing",
     ],
-    technologies: ["Adobe Premiere Pro", "After Effects", "Figma","meta business suit"],
+    technologies: [
+      "Adobe Premiere Pro",
+      "After Effects",
+      "Figma",
+      "Meta Business Suite",
+    ],
   },
-
   3: {
     id: 3,
     title: "Gstore",
-    category: "Web Application",
+    category: "E-commerce Platform",
     image: "/lovable-uploads/d1s.jpeg",
     description:
-      "An electronics-focused online store offering a wide range of gadgets and devices. The platform features user-friendly browsing, secure payment integration, order management, and responsive design for a seamless shopping experience.",
+      "A modern e-commerce web app for electronics, offering seamless shopping with secure payment integration and real-time order tracking.",
     features: [
-      "Electronics product catalog with categories and search",
-      "Shopping cart and checkout system",
+      "Product browsing with filters",
+      "Add to cart & checkout flow",
       "Payment gateway integration",
-      "Order tracking and user account management",
-      "Responsive design for desktop and mobile",
+      "User account & order tracking",
     ],
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
   },
-    4: {
-    id: 4,
-    title: "Fintech",
-    category: "Mobile Application",
-    image: "/lovable-uploads/c6.jpeg ",
-    description:
-      "A mobile/web app designed to manage and track chit collections from borrowers efficiently. It simplifies payment recording, reminders, and reporting for smooth financial operations.",
-    features: [
-      "Borrower management and payment tracking",
-  "Automated reminders for due amounts",
-  "Collection reports and analytics",
-  "User-friendly interface for easy operation"
-    ],
-    technologies: ["Flutter", "Node.js", "Express.js", "MongoDB"],
-  },
-    5: {
-    id: 5,
-    title: "Loan Web App",
-    category: "Web Application",
-    image: "/lovable-uploads/c2.png",
-    description:
-      "A front-end web application developed as per client requirements to manage agriculture and animal husbandry loan processes. The app is built using JSON files for data storage, without a database, providing a lightweight and functional interface.",
-    features: [
-      "Loan application forms and tracking",
-  "Display of loan schemes and details",
-  "Lightweight front-end with JSON-based data handling",
-  "Responsive design for desktop and mobile"
-    ],
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
-  },
-    6: {
-    id: 6,
-    title: "Parking App",
-    category: "Mobile Application",
-    image: "/lovable-uploads/c.jpg",
-    description:
-      "A mobile/web app designed to simplify parking management for users and administrators. The app helps find, book, and manage parking spaces efficiently.",
-    features: [
-      "Search and reserve parking spots",
-  "Real-time availability updates",
-  "Booking history and payment tracking",
-  "User-friendly interface with responsive design"
-    ],
-    technologies: ["Flutter", "Node.js", "Express.js", "MongoDB"],
-  },
-    7: {
-    id: 7,
-    title: "UI/UX Design",
-    category: "UI/UX Design & Development",
-    image: "/lovable-uploads/ui ux.png",
-    description:
-      "In today’s fast-evolving digital world, UI/UX design plays a key role in crafting seamless user experiences. In India’s growing tech scene, Concept Infoway stands out for its creative approach, design expertise, and deep user insight, delivering intuitive and engaging digital experiences.",
-    features: [
-        "Crafting seamless user experiences through innovative UI/UX design",
-  "Creative approach and design expertise tailored for users",
-  "Deep user insight to deliver intuitive digital experiences",
-  "Engaging and interactive interfaces for better user engagement"
-    ],
-    technologies: ["Figma",
-"Adobe Photoshop",
-"Adobe XD",
-"Adobe Illustrator",
-"Adobe InDesign",
-"Sketch"],
-  }
-
-  // ... other entries ...
 };
 
 const PortfolioDetail = () => {
@@ -141,69 +75,67 @@ const PortfolioDetail = () => {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
       <Navbar />
-      <div className="container mx-auto px-4 py-16">
+
+      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+        {/* Back Button */}
         <Link to="/portfolio">
-          <Button variant="ghost" className="mb-8">
+          <Button variant="ghost" className="mb-8 text-sm sm:text-base">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Portfolio
           </Button>
         </Link>
 
-        {/* ✅ Hero Section — show video if exists, otherwise image */}
-<div className="mb-12 w-full rounded-lg shadow-lg overflow-hidden">
-  {/* Video */}
-  {item.video && (
-    <div className="w-full h-[400px] md:h-[450px] mb-6">
-      <video
-        src={item.video}
-        className="w-full h-full object-contain min-w-[300px] min-h-[300px] rounded-lg"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
-    </div>
-  )}
+        {/* Media Section (Image → Video order) */}
+        <div className="rounded-2xl shadow-lg overflow-hidden bg-white mb-12">
+          {/* Image first */}
+          {item.image && (
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-[220px] sm:h-[400px] object-cover"
+            />
+          )}
 
-  {/* Image */}
-  {item.image && (
-    <div className="w-full h-[400px] md:h-[450px]">
-      <img
-        src={item.image}
-        alt={item.title}
-        className="w-full h-full object-cover rounded-lg"
-      />
-    </div>
-  )}
-</div>
+          {/* Add space before video */}
+          {item.video && (
+            <div className="mt-3 sm:mt-5">
+              <video
+                src={item.video}
+                className="w-full h-[220px] sm:h-[400px] object-contain bg-black rounded-b-2xl"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+          )}
+        </div>
 
+        {/* Content Section */}
+        <div className="max-w-4xl mx-auto text-center sm:text-left">
+          <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-medium mb-4">
+            {item.category}
+          </span>
 
+          <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-6 leading-snug">
+            {item.title}
+          </h1>
 
-        {/* Content */}
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              {item.category}
-            </span>
-            <h1 className="text-4xl font-bold text-foreground mb-6">
-              {item.title}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {item.description}
-            </p>
-          </div>
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-10">
+            {item.description}
+          </p>
 
           {/* Features */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              Key Features
+          <div className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+              ✨ Key Features
             </h2>
-            <ul className="grid md:grid-cols-2 gap-3">
+            <ul className="grid gap-3 sm:gap-4 sm:grid-cols-2 text-gray-600 text-sm sm:text-base">
               {item.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                  <span className="text-primary mt-1">•</span>
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-primary font-bold mt-1">•</span>
                   <span>{feature}</span>
                 </li>
               ))}
@@ -211,15 +143,15 @@ const PortfolioDetail = () => {
           </div>
 
           {/* Technologies */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              Technologies Used
+          <div className="mb-16">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+              ⚙️ Technologies Used
             </h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
               {item.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
+                  className="px-4 py-2 bg-primary/10 text-primary font-medium rounded-full text-xs sm:text-sm"
                 >
                   {tech}
                 </span>
@@ -227,7 +159,8 @@ const PortfolioDetail = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
+
       <Footer />
     </div>
   );

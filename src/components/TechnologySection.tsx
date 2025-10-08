@@ -11,6 +11,7 @@ const TechnologySection = () => {
     { name: "Java", icon: "☕", color: "from-orange-400 to-red-600" },
     { name: "Spring", icon: "🌱", color: "from-green-400 to-green-600" },
   ];
+
   const marqueeRef = useRef(null);
   const [marqueeWidth, setMarqueeWidth] = useState(0);
 
@@ -21,37 +22,40 @@ const TechnologySection = () => {
   }, []);
 
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-4 sm:px-6 bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4 text-gray-800">Technology</h2>
-        <p className="text-gray-500 mb-12 max-w-2xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800">
+          Technology
+        </h2>
+        <p className="text-gray-500 text-sm sm:text-base mb-12 max-w-2xl mx-auto leading-relaxed">
           We create and deliver custom solutions of high technical and engineering
           quality using the following technologies and frameworks.
         </p>
 
-        {/* Infinite Marquee - left to right and icon rotate */}
+        {/* Marquee Section */}
         <div className="relative overflow-hidden">
           <div
             ref={marqueeRef}
-            className="flex whitespace-nowrap"
+            className="flex whitespace-nowrap items-center"
             style={{
-              animation: `marqueeLTR ${marqueeWidth / 50}s linear infinite`,
+              animation: `marqueeLTR ${marqueeWidth / 60}s linear infinite`,
             }}
           >
             {[...technologies, ...technologies].map((tech, index) => (
               <div
                 key={index}
-                className={`w-28 h-28 border-2 border-sky-400 rounded-xl flex flex-col items-center justify-center text-3xl bg-white shadow-md hover:shadow-lg transition flex-shrink-0 mx-2`}
+                className={`w-20 h-20 sm:w-28 sm:h-28 border-2 border-sky-400 rounded-xl flex flex-col items-center justify-center text-2xl sm:text-3xl bg-white shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0 mx-2`}
               >
                 <span
                   className="inline-block"
                   style={{
-                    animation: "rotateIcon 2s linear infinite",
+                    animation: "rotateIcon 2.5s linear infinite",
                   }}
                 >
                   {tech.icon}
                 </span>
-                <span className="text-sm font-semibold text-gray-700 mt-1">
+                <span className="text-xs sm:text-sm font-semibold text-gray-700 mt-1">
                   {tech.name}
                 </span>
               </div>
@@ -59,20 +63,22 @@ const TechnologySection = () => {
           </div>
         </div>
 
+        {/* Learn More Link */}
         <a
           href="#"
-          className="text-sky-500 hover:underline inline-flex items-center gap-2 mt-8"
+          className="text-sky-500 hover:underline inline-flex items-center gap-2 mt-10 text-sm sm:text-base"
         >
           Know more about our technical expertise →
         </a>
       </div>
 
-      {/* Custom CSS for marquee and rotate */}
+      {/* Custom Animations */}
       <style>{`
         @keyframes marqueeLTR {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(0); }
         }
+
         @keyframes rotateIcon {
           0% { transform: rotate(0deg);}
           100% { transform: rotate(360deg);}
