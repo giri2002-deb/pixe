@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import ExpertiseSection from "../components/ExpertiseSection";
 import TechnologySection from "../components/TechnologySection";
-import TestimonialSection from "../components/TestimonialSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
@@ -25,39 +24,39 @@ const Index = () => {
   }
 
   return (
-    <div
-      className="min-h-screen bg-white overflow-auto scroll-smooth"
-      style={{ overflowX: "auto", overflowY: "auto" }}
-    >
-      {/* ✅ FIXED NAVBAR (stays visible always) */}
+    <div className="relative min-h-screen bg-white scroll-smooth">
+      {/* Fixed Navbar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <Navbar />
       </header>
 
-      {/* ✅ MAIN CONTENT - scrolls under the fixed navbar */}
-      <main
-       
-      >
-        <section id="hero" className="py-10 sm:py-4">
+      {/* Main content */}
+      <main className="pt-5"> {/* Add padding-top to avoid overlap with fixed navbar */}
+        {/* Hero Section */}
+        <section id="hero" className="py-16 sm:py-24">
           <HeroSection />
         </section>
 
+        {/* Expertise Section */}
         <section id="expertise" className="py-16 sm:py-24 bg-gray-50">
           <ExpertiseSection />
         </section>
 
+        {/* Technology Section */}
         <section id="technology" className="py-16 sm:py-24 bg-white">
           <TechnologySection />
         </section>
 
-
-        <section id="contact" className="py-16 sm:py-24 bg-white">
+        {/* Contact Section */}
+        <section id="contact" className="py-16 sm:py-24 bg-gray-50">
           <ContactSection />
         </section>
       </main>
 
-      {/* ✅ FOOTER */}
-      <Footer />
+      {/* Footer */}
+      <footer className="mt-12">
+        <Footer />
+      </footer>
     </div>
   );
 };
